@@ -19,7 +19,7 @@ class Crawler
   def get_page(path)
     http = Net::HTTP.new(@server, 80)
     request = Net::HTTP::Get.new(path)
-    request.basic_auth @username, @password
+    request.basic_auth @username, @password   #remove if not necessary
     response = http.request(request)
     page = response.body
   end
